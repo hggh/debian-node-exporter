@@ -14,3 +14,5 @@ fpm --deb-default etc/default/node_exporter \
   -v $VERSION-${DEB_VERSION} \
   usr build/node_exporter-${VERSION}.linux-amd64/node_exporter=usr/bin/ var
 
+
+rm -rf build
