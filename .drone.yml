@@ -8,7 +8,7 @@ pipeline:
     image: ubuntu:18.04
     commands:
       - apt-get update
-      - apt-get install -y wget ruby ruby-dev build-essentials
+      - apt-get install -y wget ruby ruby-dev build-essential
       - gem install fpm
       - ./builder
       - ls
