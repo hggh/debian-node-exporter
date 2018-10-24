@@ -2,17 +2,19 @@
 
 source CONFIG
 
+rm -rf *.deb
+rm -rf build
+
 mkdir build
 cd build 
+
 wget $URL
-tar xvfz node_exporter*.tar.gz
+tar xvfz *.tar.gz
+
 cd ..
 
-fpm --deb-default etc/default/node_exporter \
-  --deb-systemd etc/systemd/system/node_exporter.service \
-  -s dir -t deb -n node-exporter \
+fpm --deb-default systemd/${PROGRAM_NAME} \
+  --deb-systemd systemd/${PROGRAM_NAME}.service \
+  -s dir -t deb -n $PACKAGE_NAME \
   -v $VERSION-${DEB_VERSION} \
-  usr build/node_exporter-${VERSION}.linux-amd64/node_exporter=usr/bin/ var
-
-
-rm -rf build
+  build/${UPSTREAM_NAME}-${VERSION}.linux-amd64/${UPSTREAM_NAME}=usr/bin/${PROGRAM_NAME} ${EXTRA_INSTALL_DIRS}

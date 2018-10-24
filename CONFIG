@@ -1,3 +1,7 @@
 VERSION=0.16.0
 DEB_VERSION=1
+PACKAGE_NAME=node-exporter
+PROGRAM_NAME=node_exporter
+UPSTREAM_NAME=node_exporter
+EXTRA_INSTALL_DIRS="var usr"
 URL=https://github.com/prometheus/node_exporter/releases/download/v${VERSION}/node_exporter-${VERSION}.linux-amd64.tar.gz
