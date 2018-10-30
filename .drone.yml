@@ -21,6 +21,9 @@ pipeline:
       - rm -f *.deb
     volumes:
       - /var/repos/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}
-    secrets: [ DEBIAN_REPO_GPG_KEY DEBIAN_S3_ACCESS_KEY DEBIAN_S3_SECRET_KEY ]
+    secrets:
+      - DEBIAN_REPO_GPG_KEY
+      - DEBIAN_S3_ACCESS_KEY
+      - DEBIAN_S3_SECRET_KEY
     when:
       event: push
