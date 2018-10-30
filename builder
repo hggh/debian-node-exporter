@@ -22,7 +22,5 @@ fpm --deb-default systemd/${PROGRAM_NAME} \
 deb-s3 upload --arch=${ARCH} \
   --bucket=${S3_BUCKET} \
   --codename=${CODENAME} \
-  --access-key-id=${DEBIAN_S3_ACCESS_KEY} \
-  --secret-access-key=${DEBIAN_S3_SECRET_KEY} \
   --s3-region=${S3_REGION} \
   --sign=${REPO_KEY_ID} ${PACKAGE_NAME}*.deb
