@@ -12,6 +12,8 @@ pipeline:
       - gem install fpm
       - gem install deb-s3
       - echo "$DEBIAN_REPO_GPG_KEY" | gpg --import
+      - export DEBIAN_S3_ACCESS_KEY
+      - export DEBIAN_S3_SECRET_KEY
       - ./builder
       - ls
       - rm -f *.deb
