@@ -10,10 +10,14 @@ pipeline:
       - apt-get update
       - apt-get install -y wget ruby ruby-dev build-essential
       - gem install fpm
+      - gem install deb-s3
+      - echo "$DEBIAN_REPO_GPG_KEY" | gpg --import
       - ./builder
       - ls
       - rm -f *.deb
     volumes:
       - /var/repos/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}:/drone/src/github.com/${DRONE_REPO_OWNER}/${DRONE_REPO_NAME}
+    scrects:
+      - DEBIAN_REPO_GPG_KEY
     when:
       event: push
