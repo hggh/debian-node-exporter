@@ -1,4 +1,4 @@
-VERSION=0.16.0
+VERSION=0.18.1
 DEB_VERSION=1
 PACKAGE_NAME=node-exporter
 PROGRAM_NAME=node_exporter
