@@ -1,5 +1,5 @@
-VERSION=1.3.1
-DEB_VERSION=2
+VERSION=1.4.0
+DEB_VERSION=1
 PACKAGE_NAME=node-exporter
 PROGRAM_NAME=node_exporter
 UPSTREAM_NAME=node_exporter
